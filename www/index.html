@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Device Properties Example</title>
+    <title>Compass Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
     <script type="text/javascript" charset="utf-8">
+
+    // The watch id references the current `watchHeading`
+    var watchID = null;
 
     // Wait for device API libraries to load
     //
@@ -13,17 +16,46 @@
     // device APIs are available
     //
     function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
+        startWatch();
+    }
+
+    // Start watching the compass
+    //
+    function startWatch() {
+
+        // Update compass every 3 seconds
+        var options = { frequency: 3000 };
+
+        watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+    }
+
+    // Stop watching the compass
+    //
+    function stopWatch() {
+        if (watchID) {
+            navigator.compass.clearWatch(watchID);
+            watchID = null;
+        }
+    }
+
+    // onSuccess: Get the current heading
+    //
+    function onSuccess(heading) {
+        var element = document.getElementById('heading');
+        element.innerHTML = 'Heading: ' + heading.magneticHeading;
+    }
+
+    // onError: Failed to get the heading
+    //
+    function onError(compassError) {
+        alert('Compass error: ' + compassError.code);
     }
 
     </script>
   </head>
   <body>
-    <p id="deviceProperties">Loading device properties...</p>
+    <div id="heading">Waiting for heading...</div>
+    <button onclick="startWatch();">Start Watching</button>
+    <button onclick="stopWatch();">Stop Watching</button>
   </body>
 </html>
