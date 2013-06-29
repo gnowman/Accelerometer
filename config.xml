@@ -16,6 +16,7 @@
         PhoneGap Team
     </author>
     <plugin name="Accelerometer" value="CDVAccelerometer" />
+    <plugin name="Compass" value="CDVLocation" />
     <!--
         Enable individual API permissions here.
         The "device" permission is required for the 'deviceready' event.
