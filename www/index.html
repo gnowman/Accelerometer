@@ -37,7 +37,7 @@
 			
 	// Draw Circle //
 	ctx.beginPath();
-	ctx.arc( 200, 100, 60, 0, 2 * Math.PI, false );
+	ctx.arc( 150, 100, 30, 0, 2 * Math.PI, false );
 	ctx.fillStyle = "#f00";
 	ctx.fill();
 	ctx.strokeStyle = "#000";
@@ -82,9 +82,9 @@
         var element = document.getElementById('accelerometer');
 
 
-        element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-                            'Acceleration Y: ' + acceleration.y + '<br />' +
-                            'Acceleration Z: ' + acceleration.z + '<br />' +
+        element.innerHTML = 'Acceleration X: ' + parseInt(acceleration.x) + '<br />' +
+                            'Acceleration Y: ' + parseInt(acceleration.y) + '<br />' +
+                            'Acceleration Z: ' + parseInt(acceleration.z) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
                             
         circle();
