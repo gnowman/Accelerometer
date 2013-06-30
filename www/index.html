@@ -43,24 +43,24 @@
     function onSuccess(acceleration) {
         var element = document.getElementById('accelerometer');
   	var x=500;
-		var y=100;
+	var y=100;
 
         element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
                             'Acceleration Y: ' + acceleration.y + '<br />' +
                             'Acceleration Z: ' + acceleration.z + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
 							
-		var canvas = document.getElementById( "c" ),
-		ctx = canvas.getContext( "2d" );
-		ctx.lineWidth = 5;
+	var canvas = document.getElementById( "c" ),
+	ctx = canvas.getContext( "2d" );
+	ctx.lineWidth = 5;
 		
-		// Draw Circle //
-		ctx.beginPath();
-		ctx.arc( 500, 100, 60, 0, 2 * Math.PI, false );
-		ctx.fillStyle = "#f00";
-		ctx.fill();
-		ctx.strokeStyle = "#000";
-		ctx.stroke();					
+	// Draw Circle //
+	ctx.beginPath();
+	ctx.arc( 500, 100, 60, 0, 2 * Math.PI, false );
+	ctx.fillStyle = "#f00";
+	ctx.fill();
+	ctx.strokeStyle = "#000";
+	ctx.stroke();					
     }
 
     // onError: Failed to get the acceleration
@@ -75,5 +75,6 @@
     <div id="accelerometer">Waiting for accelerometer...</div>
         <button onclick="stopWatch();">Stop</button>
         <button onclick="startWatch();">Start</button>
+        <canvas id="c" width="960" height="720"></canvas>
   </body>
 </html>
