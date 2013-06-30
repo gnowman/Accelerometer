@@ -69,15 +69,36 @@
         var element = document.getElementById('accelerometer');
 	var x = acceleration.x.toFixed(2) ;
 	var y = acceleration.y.toFixed(2) ; 
+	var k =140; //x
+	var h =130; //y
 
         element.innerHTML = 'Acceleration X: ' + x + '<br />' +
                             'Acceleration Y: ' + y + '<br />' +
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
 		
-		x=(x*10).toFixed(2);
-		y=(y*10).toFixed(2);
+	x=(x*10).toFixed(2);
+	y=(y*10).toFixed(2);
 		
+	if(x>0){
+		k=k+x;
+		if(y>0){
+			h=h-y;
+		}
+		else{
+			h=h+y;
+		}
+	}
+	else if(x<0){
+		k=k-x;
+		if(y>0){
+			h=h-y;
+		}
+		else{
+			h=h+y;
+		}
+	}
+
 		element.innerHTML = 'X: ' + x + '<br />' +
                             'Y: ' + y + '<br />' ;
 		
