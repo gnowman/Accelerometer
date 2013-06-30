@@ -75,6 +75,12 @@
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
 		
+		x=x*10;
+		y=y*10;
+		
+		element.innerHTML = 'X: ' + x + '<br />' +
+                            'Y: ' + y + '<br />' ;
+		
 		var canvas = document.getElementById( "c" ),
 		ctx = canvas.getContext( "2d" );
 		ctx.lineWidth = 5;
