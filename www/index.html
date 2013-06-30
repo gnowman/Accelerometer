@@ -23,8 +23,8 @@
     //
     function startWatch() {
 
-        // Update acceleration every 3 seconds
-        var options = { frequency: 3000 };
+        // Update acceleration every 1 seconds
+        var options = { frequency: 1000 };
 
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     }
