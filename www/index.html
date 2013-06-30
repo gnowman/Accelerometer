@@ -80,13 +80,15 @@
     //
     function onSuccess(acceleration) {
         var element = document.getElementById('accelerometer');
+	var x = acceleration.x.toFixed(2) ;
+	var y = acceleration.y.toFixed(2) ; 
 
-
-        element.innerHTML = 'Acceleration X: ' + acceleration.x.toFixed(2) + '<br />' +
-                            'Acceleration Y: ' + acceleration.y.toFixed(2) + '<br />' +
+        element.innerHTML = 'Acceleration X: ' + x + '<br />' +
+                            'Acceleration Y: ' + y + '<br />' +
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
                             
+        
         circle();
 										
     }
