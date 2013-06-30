@@ -30,11 +30,14 @@
     // The watch id references the current `watchAcceleration`
     var watchID = null;
     
-    function circle() {
+    function circle(x,y) {
         var canvas = document.getElementById( "c" ),
 	ctx = canvas.getContext( "2d" );
 	ctx.lineWidth = 5;
-			
+	
+	element.innerHTML = 'X: ' + x + '<br />' +
+                            'Y: ' + y + '<br />' ;
+	
 	// Draw Circle //
 	ctx.beginPath();
 	ctx.arc( 140, 130, 30, 0, 2 * Math.PI, false );
@@ -88,8 +91,9 @@
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
                             
-        
-        circle();
+        x=x*10;
+        y=y*10;
+        circle(x,y);
 										
     }
 
