@@ -75,8 +75,8 @@
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
 		
-		x=x*10;
-		y=y*10;
+		x=(x*10).toFixed(2);
+		y=(y*10).toFixed(2);
 		
 		element.innerHTML = 'X: ' + x + '<br />' +
                             'Y: ' + y + '<br />' ;
