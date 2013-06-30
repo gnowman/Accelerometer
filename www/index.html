@@ -73,7 +73,7 @@
 	var h =130; //y
 	var canvas = document.getElementById( "c" ),
 	ctx = canvas.getContext( "2d" );
-
+	
         element.innerHTML = 'Acceleration X: ' + x + '<br />' +
                             'Acceleration Y: ' + y + '<br />' +
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
@@ -107,7 +107,11 @@
 		
 		
 		ctx.lineWidth = 5;
-			
+		
+		// Clear Circle //
+		ctx.clear();
+		
+		
 		// Draw Circle //
 		ctx.beginPath();
 		ctx.arc( k, h, 30, 0, 2 * Math.PI, false );
