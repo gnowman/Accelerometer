@@ -74,10 +74,15 @@
 	var canvas = document.getElementById( "c" ),
 	ctx = canvas.getContext( "2d" );
 	
-        element.innerHTML = 'Acceleration X: ' + x + '<br />' +
+       /* element.innerHTML = 'Acceleration X: ' + x + '<br />' +
                             'Acceleration Y: ' + y + '<br />' +
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
+        */
+                      
+        element.innerHTML = 'Acceleration X: ' + x + '<br />' +
+                            'Acceleration Y: ' + y + '<br />' ;
+                            
 		
 	x=(x*10).toFixed(2);
 	y=(y*10).toFixed(2);
@@ -102,9 +107,9 @@
 		}
 	}
 
-		element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
+	/*	element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
                             'H: ' + h + '  '+'Y: '+ y +'<br />' ;
-		
+	*/
 		
 		ctx.lineWidth = 5;
 		
@@ -122,9 +127,9 @@
 		ctx.stroke();
 		
 		//now, erase the arc by clearing a rectangle that's slightly larger than the arc
-		context.beginPath();
+		/*context.beginPath();
 		context.clearRect(k - 30 - 1, h - 30 - 1, 30 * 2 + 2, 30 * 2 + 2);
-		context.closePath();
+		context.closePath();*/
     }
     
 
