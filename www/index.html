@@ -71,6 +71,8 @@
 	var y = acceleration.y.toFixed(2) ; 
 	var k =140; //x
 	var h =130; //y
+	var canvas = document.getElementById( "c" ),
+	ctx = canvas.getContext( "2d" );
 
         element.innerHTML = 'Acceleration X: ' + x + '<br />' +
                             'Acceleration Y: ' + y + '<br />' +
@@ -103,8 +105,7 @@
 		element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
                             'H: ' + h + '  '+'Y: '+ y +'<br />' ;
 		
-		var canvas = document.getElementById( "c" ),
-		ctx = canvas.getContext( "2d" );
+		
 		ctx.lineWidth = 5;
 			
 		// Draw Circle //
