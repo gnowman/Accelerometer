@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Compass Example</title>
+    <title>Acceleration Example</title>
 
     <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-    // The watch id references the current `watchHeading`
+    // The watch id references the current `watchAcceleration`
     var watchID = null;
 
     // Wait for device API libraries to load
@@ -19,43 +19,46 @@
         startWatch();
     }
 
-    // Start watching the compass
+    // Start watching the acceleration
     //
     function startWatch() {
 
-        // Update compass every 3 seconds
+        // Update acceleration every 3 seconds
         var options = { frequency: 3000 };
 
-        watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     }
 
-    // Stop watching the compass
+    // Stop watching the acceleration
     //
     function stopWatch() {
         if (watchID) {
-            navigator.compass.clearWatch(watchID);
+            navigator.accelerometer.clearWatch(watchID);
             watchID = null;
         }
     }
 
-    // onSuccess: Get the current heading
+    // onSuccess: Get a snapshot of the current acceleration
     //
-    function onSuccess(heading) {
-        var element = document.getElementById('heading');
-        element.innerHTML = 'Heading: ' + heading.magneticHeading;
+    function onSuccess(acceleration) {
+        var element = document.getElementById('accelerometer');
+
+        element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+                            'Acceleration Y: ' + acceleration.y + '<br />' +
+                            'Acceleration Z: ' + acceleration.z + '<br />' +
+                            'Timestamp: '      + acceleration.timestamp + '<br />';
     }
 
-    // onError: Failed to get the heading
+    // onError: Failed to get the acceleration
     //
-    function onError(compassError) {
-        alert('Compass error: ' + compassError.code);
+    function onError() {
+        alert('onError!');
     }
 
     </script>
   </head>
   <body>
-    <div id="heading">Waiting for heading...</div>
-    <button onclick="startWatch();">Start Watching</button>
-    <button onclick="stopWatch();">Stop Watching</button>
+    <div id="accelerometer">Waiting for accelerometer...</div>
+        <button onclick="stopWatch();">Stop Watching</button>
   </body>
 </html>
