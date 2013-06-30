@@ -30,22 +30,6 @@
     // The watch id references the current `watchAcceleration`
     var watchID = null;
     
-    function circle(x,y) {
-        var canvas = document.getElementById( "c" ),
-	ctx = canvas.getContext( "2d" );
-	ctx.lineWidth = 5;
-	
-	element.innerHTML = 'X: ' + x + '<br />' +
-                            'Y: ' + y + '<br />' ;
-	
-	// Draw Circle //
-	ctx.beginPath();
-	ctx.arc( 140, 130, 30, 0, 2 * Math.PI, false );
-	ctx.fillStyle = "#f00";
-	ctx.fill();
-	ctx.strokeStyle = "#000";
-	ctx.stroke();		
-    }
 
     // Wait for device API libraries to load
     //
@@ -90,11 +74,18 @@
                             'Acceleration Y: ' + y + '<br />' +
                             'Acceleration Z: ' + acceleration.z.toFixed(2) + '<br />' +
                             'Timestamp: '      + acceleration.timestamp + '<br />';
-                            
-        x=x*10;
-        y=y*10;
-        circle(x,y);
-										
+		
+		var canvas = document.getElementById( "c" ),
+		ctx = canvas.getContext( "2d" );
+		ctx.lineWidth = 5;
+			
+		// Draw Circle //
+		ctx.beginPath();
+		ctx.arc( 140, 130, 30, 0, 2 * Math.PI, false );
+		ctx.fillStyle = "#f00";
+		ctx.fill();
+		ctx.strokeStyle = "#000";
+		ctx.stroke();		
     }
 
     // onError: Failed to get the acceleration
