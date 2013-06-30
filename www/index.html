@@ -21,10 +21,10 @@
 	<!-- Extra Codiqa features -->
  
 	<link rel="stylesheet" href="css/codiqa.ext.css">
-    <title>Acceleration Example</title>
+   	 <title>Acceleration Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
+   	 <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+   	 <script type="text/javascript" charset="utf-8">
 
     // The watch id references the current `watchAcceleration`
     var watchID = null;
@@ -43,22 +43,22 @@
     //
     function startWatch() {
 
-        // Update acceleration every 1 seconds
-        var options = { frequency: 1000 };
+        // Update acceleration every 0.1 seconds
+        var options = { frequency: 100 };
 
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 		
-		var canvas = document.getElementById( "c" ),
-		ctx = canvas.getContext( "2d" );
-		ctx.lineWidth = 5;
+	var canvas = document.getElementById( "c" ),
+	ctx = canvas.getContext( "2d" );
+	ctx.lineWidth = 5;
 			
-		// Draw Circle //
-		ctx.beginPath();
-		ctx.arc( 500, 200, 60, 0, 2 * Math.PI, false );
-		ctx.fillStyle = "#f00";
-		ctx.fill();
-		ctx.strokeStyle = "#000";
-		ctx.stroke();		
+	// Draw Circle //
+	ctx.beginPath();
+	ctx.arc( 500, 200, 60, 0, 2 * Math.PI, false );
+	ctx.fillStyle = "#f00";
+	ctx.fill();
+	ctx.strokeStyle = "#000";
+	ctx.stroke();		
 		
     }
 
