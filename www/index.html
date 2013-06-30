@@ -95,19 +95,16 @@
 	<div data-role="page" id="page1">
 		<div data-theme="a" data-role="header">
 			
-	<a data-role="button" href="#page1" class="ui-btn-left">
-				Back
-			</a>
-			<h3>
-				Accelerometer
-			</h3>
+	<a data-role="button" href="#page1" class="ui-btn-left">Back</a>
+	<h3>Accelerometer</h3>
 		</div>
 		<div data-role="content">
+			<div id="accelerometer">Waiting for accelerometer...</div>
+			<button onclick="stopWatch();">Stop</button>
+			<button onclick="startWatch();">Start</button>
+			<canvas id="c" width="960" height="720"></canvas>
 		</div>
 	</div>
-    <div id="accelerometer">Waiting for accelerometer...</div>
-        <button onclick="stopWatch();">Stop</button>
-        <button onclick="startWatch();">Start</button>
-        <canvas id="c" width="960" height="720"></canvas>
+    
   </body>
 </html>
