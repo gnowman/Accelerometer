@@ -39,6 +39,14 @@
     //
     function onDeviceReady() {
         startWatch();
+        var canvas = document.getElementById( "c" ),
+	ctx = canvas.getContext( "2d" );
+	ctx.beginPath();
+	ctx.arc( 140, 160, 200, 0, 2 * Math.PI, false );
+	ctx.fillStyle = "#f00";
+	ctx.fill();
+	ctx.strokeStyle = "#000";
+	ctx.stroke();
     }
 
     // Start watching the acceleration
@@ -111,9 +119,9 @@
 		}
 	}
 	
-		element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
+	/*	element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
                             'H: ' + h + '  '+'Y: '+ y +'<br />' ;
-	
+	*/
 		
 		ctx.lineWidth = 5;
 		
