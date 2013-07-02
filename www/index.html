@@ -38,15 +38,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-        startWatch();
-        var canvas = document.getElementById( "c" ),
-	ctx = canvas.getContext( "2d" );
-	ctx.beginPath();
-	ctx.arc( 140, 160, 200, 0, 2 * Math.PI, false );
-	ctx.fillStyle = "#f00";
-	ctx.fill();
-	ctx.strokeStyle = "#000";
-	ctx.stroke();
+        startWatch();   
     }
 
     // Start watching the acceleration
@@ -57,8 +49,14 @@
         var options = { frequency: 10 };
 
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-		
-	
+	var canvas = document.getElementById( "c" ),
+	ctx = canvas.getContext( "2d" );
+	ctx.beginPath();
+	ctx.arc( 140, 160, 200, 0, 2 * Math.PI, false );
+	ctx.fillStyle = "#f00";
+	ctx.fill();
+	ctx.strokeStyle = "#000";
+	ctx.stroke();	
 		
     }
 
