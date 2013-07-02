@@ -90,7 +90,7 @@
 	y=(y*15).toFixed(2);
 	
 
-	
+	x=(x*(-1));
 	if(x>0){
 		k=(k-x);
 		if(y>0){
@@ -121,11 +121,12 @@
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		
 		
-		// Draw Circle //
-		ctx.beginPath();
+		
+		
+		//ctx.beginPath();
 		//ctx.arc( 140, 160, 300, 0, 2 * Math.PI, false );
 
-		
+		// Draw Circle //
 		ctx.beginPath();
 		ctx.arc( k, h, 30, 0, 2 * Math.PI, false );
 		ctx.fillStyle = "#f00";
