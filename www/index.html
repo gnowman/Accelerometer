@@ -102,8 +102,7 @@
 	}
 	
 	if(x<0){
-		x=x*(-1);
-		k=k-x;
+		k=k+x;
 		if(y>0){
 			h=h-y;
 		}
@@ -111,8 +110,6 @@
 			h=h-y;
 		}
 	}
-	
-	x=x*(-1);
 	
 		element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
                             'H: ' + h + '  '+'Y: '+ y +'<br />' ;
@@ -129,9 +126,11 @@
 		ctx.arc( 140, 160, 300, 0, 2 * Math.PI, false );
 		ctx.fillStyle = "#000";
 		ctx.fill();
+		ctx.strokeStyle = "#000";
+		ctx.stroke();
 		
+		ctx.beginPath();
 		ctx.arc( k, h, 30, 0, 2 * Math.PI, false );
-		//context.closePath();
 		ctx.fillStyle = "#f00";
 		ctx.fill();
 		ctx.strokeStyle = "#000";
