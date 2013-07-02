@@ -49,15 +49,7 @@
         var options = { frequency: 10 };
 
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-	var canvas = document.getElementById( "c" ),
-	ctx = canvas.getContext( "2d" );
-	ctx.beginPath();
-	ctx.arc( 140, 160, 200, 0, 2 * Math.PI, false );
-	ctx.fillStyle = "#f00";
-	ctx.fill();
-	ctx.strokeStyle = "#000";
-	ctx.stroke();	
-		
+
     }
 
     // Stop watching the acceleration
@@ -77,6 +69,15 @@
 	var y = acceleration.y.toFixed(2) ; 
 	var k =140; //x
 	var h =160; //y
+	var canvas = document.getElementById( "d" ),
+	ctx = canvas.getContext( "2d" );
+	ctx.beginPath();
+	ctx.arc( 140, 160, 250, 0, 2 * Math.PI, false );
+	ctx.fillStyle = "#f00";
+	ctx.fill();
+	ctx.strokeStyle = "#000";
+	ctx.stroke();	
+		
 	var canvas = document.getElementById( "c" ),
 	ctx = canvas.getContext( "2d" );
 	
@@ -155,16 +156,17 @@
   </head>
   <body><!-- Home -->
 	<div data-role="page" id="page1">
-		<div data-theme="a" data-role="header">
-			
-	<a data-role="button" href="#page1" class="ui-btn-left">Back</a>
-	<h3>Accelerometer</h3>
-		</div>
+		<div data-theme="a" data-role="header">		
+		<a data-role="button" href="#page1" class="ui-btn-left">Back</a>
+		<h3>Accelerometer</h3>
+	</div>
 		<div data-role="content">
-			<div id="accelerometer">Waiting for accelerometer...</div>
-			<button onclick="stopWatch();">Stop</button>
-			<button onclick="startWatch();">Start</button>
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><button onclick="stopWatch();">Stop</button></div>
+				<div class="ui-block-b"><button onclick="startWatch();">Start</button></div>
+			</fieldset>
 			<canvas id="c" width="1136" height="640"></canvas>
+			<canvas id="d" width="1136" height="640"></canvas>
 		</div>
 	</div>
     
