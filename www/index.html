@@ -69,17 +69,19 @@
 	var y = acceleration.y.toFixed(2) ; 
 	var k =140; //x
 	var h =160; //y
-	var canvas = document.getElementById( "d" ),
-	ctx = canvas.getContext( "2d" );
-	ctx.beginPath();
-	ctx.arc( 140, 160, 250, 0, 2 * Math.PI, false );
-	ctx.fillStyle = "#f00";
-	ctx.fill();
-	ctx.strokeStyle = "#000";
-	ctx.stroke();	
+
+
 		
 	var canvas = document.getElementById( "c" ),
 	ctx = canvas.getContext( "2d" );
+	
+	// Big Circle
+	ctx.beginPath();
+	ctx.arc( 140, 160, 250, 0, 2 * Math.PI, false );
+	ctx.fillStyle = "#000";
+	ctx.fill();
+	ctx.strokeStyle = "#000";
+	ctx.stroke();	
 	
        /* element.innerHTML = 'Acceleration X: ' + x + '<br />' +
                             'Acceleration Y: ' + y + '<br />' +
@@ -166,7 +168,7 @@
 				<div class="ui-block-b"><button onclick="startWatch();">Start</button></div>
 			</fieldset>
 			<canvas id="c" width="1136" height="640"></canvas>
-			<canvas id="d" width="1136" height="640"></canvas>
+
 		</div>
 	</div>
     
