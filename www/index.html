@@ -80,14 +80,19 @@
                             'Timestamp: '      + acceleration.timestamp + '<br />';
         */
                       
+        /* 
         element.innerHTML = 'Acceleration X: ' + x + '<br />' +
                             'Acceleration Y: ' + y + '<br />' ;
+         */
                             
 		
 	x=(x*15).toFixed(2);
-	y=(y*15).toFixed(2);	
+	y=(y*15).toFixed(2);
+	
+
+	
 	if(x>0){
-		k=k+x;
+		k=k-x;
 		if(y>0){
 			h=h-y;
 		}
@@ -97,8 +102,7 @@
 	}
 	
 	if(x<0){
-		x=x*(-1);
-		k=k-x;
+		k=k+x;
 		if(y>0){
 			h=h-y;
 		}
@@ -107,9 +111,9 @@
 		}
 	}
 
-	/*	element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
+		element.innerHTML = 'K: ' + k + '  '+'X: '+ x +'<br />' +
                             'H: ' + h + '  '+'Y: '+ y +'<br />' ;
-	*/
+	
 		
 		ctx.lineWidth = 5;
 		
@@ -119,6 +123,7 @@
 		
 		// Draw Circle //
 		ctx.beginPath();
+		ctx.arc( k, h, 100, 0, 2 * Math.PI, false );
 		ctx.arc( k, h, 30, 0, 2 * Math.PI, false );
 		//context.closePath();
 		ctx.fillStyle = "#f00";
