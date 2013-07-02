@@ -92,25 +92,24 @@
 	x=(x*15).toFixed(2);
 	y=(y*15).toFixed(2);
 	
-
-	x=(x*(-1));
+	y=(y*(-1));
 	if(x>0){
-		k=(k+x);
+		k=(k-x);
 		if(y>0){
-			h=h+y;
+			h=h-y;
 		}
 		else{
-			h=h+y;
+			h=h-y;
 		}
 	}
 	
 	if(x<0){
-		k=(k+x);
+		k=(k-x);
 		if(y>0){
-			h=h+y;
+			h=h-y;
 		}
 		else{
-			h=h+y;
+			h=h-y;
 		}
 	}
 	
